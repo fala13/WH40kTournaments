@@ -1,0 +1,32 @@
+1. zaraz po rejestracji mozna wszystko robic, ale po pierwszym resecie apki, mowi, ze user nieaktywny
+2. dodawanie graczy do teamow - powinien byc gdzies z boku widok wszystkich dodanych, albo powinni byc wybierani z dropdown'a
+3. lista graczy powinna sie sama generowac na podstawie ligii, to dodawanie reczne to tylko dla nieligowcow
+4. probowalem dodac nowego gracza ze zlym ID, 2 razy sie nie udalo a potem z dobrym i dostalem jakis wyjatek (ale gracz sie dodal), potem ciagle to dostawalem :/:
+Render and/or redirect were called multiple times in this action. Please note that you may o
+
+create
+app/controllers/players_controller.rb
+
+redirect_to tournament_tournament_registrations_path(@tournament), :notice => "Dodano zg?oszenie"
+redirect_to :back, :alert => "Nie uda?o si? doda? zg?oszenia"
+end
+end
+redirect_to :back, :alert => "Dodano gracza, mo?esz doda? go do dru?yny"
+else
+redirect_to :back, :alert => "Nie uda?o si? doda? gracza"
+end
+end
+
+5. w turnieju singlowym, na ekranie prowadzenia turnieju przy graczach jest 'usun druzyne' zamiast 'usun gracza'
+6. brak opcji kasowania rundy/innego wygenerowania. np. ktos przychodzi spozniony i nie mozna go dorzucic do parowania
+7. male punkty przeliczaja sie na duze "po staremu", nie ma mozliwosci zmiany tego, (roznica 10pkt = 20:0)
+8. Brak opcji bezposredniego przejscia z ekranu 'przebieg turnieju' do wynikow (czyli do 'results) po zakonczeniu turnieju.
+9. w wynikach przydaloby sie trzymac liczbe wygranych bitew. W Polsce to sie olewa, ale ktos moze chciec po tym rozdzielac remisy itp.
+10. nazwa tabeli tournament_registrations troche niepasuje - lepsze byloby tournament_participants
+11. powinno byc cos takiego jak glowna strona do ktorej zawsze mozna wrocic, bo latwo sie zgubic na poczatku. Np. wrocic przez klikanie ikony apki do 'tournaments'. 
+12. Gracz zalogowany w menu powinien miec zawsze link do swojego aktualnie prowadzonego turnieju
+13. w widoku 'przebieg turnieju' jest opcja 'dodaj sekcje', ale juz dodane recznie sekcje nie pojawiaja sie na tym widoku -> albo wywalic te opcje z tego widoku, albo dodac wyswietlanie wszystkich sekcji
+xx. ranking sie nie generuje wcale :)
+xx. opcja zapisywania turnieju w danym stanie do pliku i przywracania z pliku
+xx. tego dolnego copyrighta bym nie robil jako floata, bo jest troche nachalny, a zajmuje sporo miejsca
+xx. brak opcji edycji w panelu admina dla graczy
